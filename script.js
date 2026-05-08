@@ -1,33 +1,32 @@
 const sounds = ["applause", "boo", "gasp", "tada", "victory", "wrong"];
+const buttons = document.getElementById("buttons");
 
-const buttonsDiv = document.getElementById("buttons");
-let currentAudio = null;
+let audio = document.createElement("audio");
+document.body.appendChild(audio);
 
 function stopSongs() {
-    if (currentAudio) {
-        currentAudio.pause();
-        currentAudio.currentTime = 0;
-    }
+    audio.pause();
+    audio.currentTime = 0;
 }
 
 sounds.forEach((sound) => {
     const btn = document.createElement("button");
-    btn.classList.add("btn");
     btn.innerText = sound;
+    btn.classList.add("btn");
 
     btn.addEventListener("click", () => {
         stopSongs();
-        currentAudio = new Audio(`sounds/${sound}.mp3`);
-        currentAudio.play();
+        audio.src = `sounds/${sound}.mp3`;
+        audio.play();
     });
 
-    buttonsDiv.appendChild(btn);
+    buttons.appendChild(btn);
 });
 
 const stopBtn = document.createElement("button");
-stopBtn.classList.add("stop");
 stopBtn.innerText = "stop";
+stopBtn.classList.add("stop");
 
 stopBtn.addEventListener("click", stopSongs);
 
-buttonsDiv.appendChild(stopBtn);
+buttons.appendChild(stopBtn);
