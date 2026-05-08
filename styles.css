@@ -1,24 +1,23 @@
-/*  your css code here. If applicable */
-#buttons {
-  display: flex;
-  gap: 15px;
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: purple;
 }
 
-.btn {
-  padding: 15px 25px;
-  font-size: 16px;
-  background-color: #706fd3;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+#buttons {
+    display: flex;
+    gap: 15px;
 }
-.stop {
-  padding: 15px 25px;
-  font-size: 16px;
-  background-color: #ff4757;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+
+.btn, .stop {
+    padding: 15px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #7b4bb7;
+    color: white;
 }
